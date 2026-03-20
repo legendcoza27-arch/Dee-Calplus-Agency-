@@ -1,0 +1,312 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Adegbayi Elijah - Mental Health Advocate</title>
+    <style>
+        /* Reset */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            scroll-behavior: smooth;
+        }
+
+        :root {
+            --primary-color: #4a90e2;
+            --bg-light: #f4f7f8;
+            --bg-dark: #121212;
+            --text-light: #333;
+            --text-dark: #eee;
+        }
+
+        body {
+            background: var(--bg-light);
+            color: var(--text-light);
+            transition: background 0.3s, color 0.3s;
+        }
+
+        body.dark-mode {
+            background: var(--bg-dark);
+            color: var(--text-dark);
+        }
+
+        header {
+            background: var(--primary-color);
+            color: white;
+            padding: 2rem 1rem;
+            text-align: center;
+        }
+
+        header h1 { font-size: 2.5rem; margin-bottom: 0.5rem; }
+        header p { font-size: 1.2rem; }
+
+        nav {
+            display: flex;
+            justify-content: center;
+            background: #333;
+        }
+
+        nav a {
+            color: white;
+            padding: 1rem 2rem;
+            text-decoration: none;
+            transition: background 0.3s;
+        }
+
+        nav a:hover { background: var(--primary-color); }
+
+        .dark-toggle {
+            position: fixed;
+            top: 1rem;
+            right: 1rem;
+            background: var(--primary-color);
+            color: white;
+            border: none;
+            padding: 0.5rem 1rem;
+            border-radius: 5px;
+            cursor: pointer;
+            z-index: 1000;
+            transition: background 0.3s;
+        }
+
+        .dark-toggle:hover { background: #357ab7; }
+
+        section { padding: 3rem 1rem; max-width: 1000px; margin: auto; }
+        section h2 { font-size: 2rem; margin-bottom: 1rem; color: var(--primary-color); }
+        section p { margin-bottom: 1rem; }
+
+        /* Cards for projects/advocacy */
+        .cards {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.5rem;
+            margin-top: 2rem;
+        }
+
+        .card {
+            background: white;
+            border-radius: 10px;
+            padding: 1.5rem;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        body.dark-mode .card { background: #1f1f1f; box-shadow: 0 4px 12px rgba(0,0,0,0.4); }
+        .card:hover { transform: translateY(-5px); box-shadow: 0 8px 20px rgba(0,0,0,0.2); }
+
+        .btn-contact {
+            display: inline-block;
+            padding: 0.8rem 1.5rem;
+            background: var(--primary-color);
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            transition: background 0.3s;
+        }
+
+        .btn-contact:hover { background: #357ab7; }
+
+        footer {
+            text-align: center;
+            padding: 2rem 1rem;
+            background: #333;
+            color: white;
+            margin-top: 2rem;
+        }
+
+        /* Animations */
+        .fade-in { opacity: 0; transform: translateY(30px); transition: opacity 0.8s ease-out, transform 0.8s ease-out; }
+        .fade-in.visible { opacity: 1; transform: translateY(0); }
+
+        /* Counter section */
+        .counters { display: flex; justify-content: space-around; margin-top: 2rem; flex-wrap: wrap; }
+        .counter { text-align: center; margin: 1rem; }
+        .counter h3 { font-size: 2rem; color: var(--primary-color); margin-bottom: 0.5rem; }
+
+        /* Testimonials carousel */
+        .carousel { position: relative; overflow: hidden; max-width: 800px; margin: 2rem auto; border-radius: 10px; }
+        .carousel-inner { display: flex; transition: transform 0.5s ease-in-out; }
+        .testimonial { min-width: 100%; padding: 2rem; background: #fff; box-shadow: 0 4px 8px rgba(0,0,0,0.1); border-radius: 10px; }
+        body.dark-mode .testimonial { background: #1f1f1f; box-shadow: 0 4px 12px rgba(0,0,0,0.4); }
+        .carousel-buttons { text-align: center; margin-top: 1rem; }
+        .carousel-buttons button { padding: 0.5rem 1rem; margin: 0 0.5rem; background: var(--primary-color); color: white; border: none; border-radius: 5px; cursor: pointer; }
+        .carousel-buttons button:hover { background: #357ab7; }
+
+        /* Social links */
+        .social { display: flex; justify-content: center; margin-top: 2rem; gap: 1rem; }
+        .social a { color: var(--primary-color); font-size: 1.5rem; transition: transform 0.3s; }
+        .social a:hover { transform: scale(1.2); }
+
+        @media (max-width: 600px) { nav { flex-direction: column; } nav a { padding: 0.8rem 0; } }
+    </style>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"/>
+</head>
+<body>
+    <button class="dark-toggle" id="toggleMode">Dark Mode</button>
+
+    <header>
+        <h1>Adegbayi Elijah</h1>
+        <p>Mental Health Advocate & Community Innovator</p>
+    </header>
+
+    <nav>
+        <a href="#about">About</a>
+        <a href="#advocacy">Advocacy</a>
+        <a href="#vision">Vision</a>
+        <a href="#projects">Projects</a>
+        <a href="#impact">Impact</a>
+        <a href="#testimonials">Testimonials</a>
+        <a href="#contact">Contact</a>
+    </nav>
+
+    <section id="about" class="fade-in">
+        <h2>About Me</h2>
+        <p>Hello! I am Adegbayi Elijah, a passionate mental health advocate based in Lagos, Nigeria. I focus on creating awareness, providing support, and promoting mental well-being within communities.</p>
+        <p>Beyond mental health, I am engaged in tech and web3 projects, helping communities navigate emerging digital landscapes.</p>
+    </section>
+
+    <section id="advocacy" class="fade-in">
+        <h2>Mental Health Advocacy</h2>
+        <ul>
+            <li>Raising awareness about mental health and reducing stigma.</li>
+            <li>Providing counseling and psychosocial support to individuals and groups.</li>
+            <li>Organizing workshops, educational events, and campaigns to promote mental wellness.</li>
+            <li>Collaborating with organizations and communities to improve access to mental health resources.</li>
+        </ul>
+    </section>
+
+    <section id="vision" class="fade-in">
+        <h2>Vision</h2>
+        <p>My mission is to empower individuals through knowledge, compassion, and support, creating a society where mental health is valued and accessible to all.</p>
+    </section>
+
+    <section id="projects" class="fade-in">
+        <h2>Projects & Initiatives</h2>
+        <div class="cards">
+            <div class="card">
+                <h3>Community Awareness Campaign</h3>
+                <p>Organized mental health workshops in Lagos communities to educate and reduce stigma.</p>
+            </div>
+            <div class="card">
+                <h3>Online Support Sessions</h3>
+                <p>Facilitated virtual counseling and peer support sessions for individuals seeking guidance.</p>
+            </div>
+            <div class="card">
+                <h3>Web3 Community Engagement</h3>
+                <p>Explored technology projects that combine innovation with community development.</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="impact" class="fade-in">
+        <h2>Impact</h2>
+        <div class="counters">
+            <div class="counter">
+                <h3 id="workshops">0</h3>
+                <p>Workshops Held</p>
+            </div>
+            <div class="counter">
+                <h3 id="people">0</h3>
+                <p>People Reached</p>
+            </div>
+            <div class="counter">
+                <h3 id="sessions">0</h3>
+                <p>Support Sessions</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="testimonials" class="fade-in">
+        <h2>Testimonials</h2>
+        <div class="carousel">
+            <div class="carousel-inner">
+                <div class="testimonial">
+                    <p>"Adegbayi's sessions were life-changing. His approach is compassionate and empowering." – Sarah K.</p>
+                </div>
+                <div class="testimonial">
+                    <p>"I attended a community workshop and gained so much clarity about mental wellness." – Tunde A.</p>
+                </div>
+                <div class="testimonial">
+                    <p>"The online support session helped me manage stress effectively. Highly recommended!" – Funke O.</p>
+                </div>
+            </div>
+        </div>
+        <div class="carousel-buttons">
+            <button id="prev">Prev</button>
+            <button id="next">Next</button>
+        </div>
+    </section>
+
+    <section id="contact" class="fade-in">
+        <h2>Contact Me</h2>
+        <p>If you want to connect, collaborate, or learn more about my advocacy and projects, reach out below!</p>
+        <a class="btn-contact" href="mailto:adegbayi.elijah@example.com">Email Me</a>
+
+        <div class="social">
+            <a href="#"><i class="fab fa-twitter"></i></a>
+            <a href="#"><i class="fab fa-linkedin"></i></a>
+            <a href="#"><i class="fab fa-facebook"></i></a>
+        </div>
+    </section>
+
+    <footer>
+        &copy; 2026 Adegbayi Elijah | Mental Health Advocate
+    </footer>
+
+    <script>
+        // Dark Mode Toggle
+        const toggleBtn = document.getElementById('toggleMode');
+        toggleBtn.addEventListener('click', () => {
+            document.body.classList.toggle('dark-mode');
+            toggleBtn.textContent = document.body.classList.contains('dark-mode') ? 'Light Mode' : 'Dark Mode';
+        });
+
+        // Fade-in animations on scroll
+        const faders = document.querySelectorAll('.fade-in');
+        const appearOptions = { threshold: 0.1 };
+        const appearOnScroll = new IntersectionObserver((entries, observer) => {
+            entries.forEach(entry => {
+                if(entry.isIntersecting){
+                    entry.target.classList.add('visible');
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, appearOptions);
+        faders.forEach(fader => appearOnScroll.observe(fader));
+
+        // Counters animation
+        function animateCounter(id, target) {
+            let count = 0;
+            const el = document.getElementById(id);
+            const interval = setInterval(() => {
+                if(count < target) {
+                    count += Math.ceil(target/100);
+                    el.textContent = count > target ? target : count;
+                } else { clearInterval(interval); }
+            }, 20);
+        }
+        animateCounter('workshops', 12);
+        animateCounter('people', 450);
+        animateCounter('sessions', 78);
+
+        // Testimonials carousel
+        const carouselInner = document.querySelector('.carousel-inner');
+        const total = carouselInner.children.length;
+        let index = 0;
+
+        document.getElementById('next').addEventListener('click', () => {
+            index = (index + 1) % total;
+            carouselInner.style.transform = `translateX(-${index*100}%)`;
+        });
+
+        document.getElementById('prev').addEventListener('click', () => {
+            index = (index - 1 + total) % total;
+            carouselInner.style.transform = `translateX(-${index*100}%)`;
+        });
+    </script>
+</body>
+</html>
