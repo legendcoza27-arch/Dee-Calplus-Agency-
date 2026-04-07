@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AySneakz</title>
+
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family: 'Segoe UI', sans-serif;
+}
+
+body{
+    background:#0f0f0f;
+    color:#fff;
+}
+
+/* NAVBAR */
+nav{
+    display:flex;
+    justify-content:space-between;
+    padding:20px;
+    background:#000;
+}
+
+nav h1{
+    color:#D4AF37;
+}
+
+nav a{
+    color:white;
+    text-decoration:none;
+    margin-left:15px;
+}
+
+/* HERO */
+.hero{
+    text-align:center;
+    padding:60px 20px;
+}
+
+.hero h2{
+    font-size:2.5rem;
+    margin-bottom:10px;
+}
+
+.hero p{
+    color:#ccc;
+}
+
+.btn{
+    display:inline-block;
+    margin-top:20px;
+    padding:12px 20px;
+    background:#D4AF37;
+    color:black;
+    text-decoration:none;
+    border-radius:5px;
+    font-weight:bold;
+}
+
+.btn:hover{
+    background:white;
+    color:black;
+    transition:0.3s;
+}
+
+/* PRODUCTS */
+.products{
+    padding:40px 20px;
+}
+
+.products h2{
+    text-align:center;
+    margin-bottom:30px;
+}
+
+.grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+    gap:20px;
+}
+
+.card{
+    background:#1a1a1a;
+    padding:15px;
+    border-radius:10px;
+    text-align:center;
+    transition:0.3s;
+}
+
+.card:hover{
+    transform:translateY(-5px);
+}
+
+.card img{
+    width:100%;
+    border-radius:10px;
+}
+
+.card h3{
+    margin-top:10px;
+}
+
+.card p{
+    margin:10px 0;
+    color:#D4AF37;
+    font-weight:bold;
+}
+
+/* ABOUT */
+.about{
+    padding:40px 20px;
+    text-align:center;
+    background:#111;
+}
+
+.about p{
+    max-width:600px;
+    margin:auto;
+    color:#ccc;
+}
+
+/* FOOTER */
+footer{
+    text-align:center;
+    padding:20px;
+    background:#000;
+    font-size:14px;
+}
+</style>
+
+</head>
+
+<body>
+
+<!-- NAV -->
+<nav>
+    <h1>AySneakz</h1>
+    <div>
+        <a href="#">Home</a>
+        <a href="#products">Products</a>
+        <a href="#about">About</a>
+    </div>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+    <h2>🔥 Fresh Kicks, Fresh Style 🔥</h2>
+    <p>Affordable • Stylish • Comfortable</p>
+
+    <a href="https://wa.me/2347062911891" class="btn">Order on WhatsApp</a>
+</section>
+
+<!-- PRODUCTS -->
+<section class="products" id="products">
+    <h2>Our Sneakers</h2>
+
+    <div class="grid">
+
+        <div class="card">
+            <img src="https://images.unsplash.com/photo-1542291026-7eec264c27ff" alt="Nike Sneaker">
+            <h3>Nike Air Runner</h3>
+            <p>₦45,000</p>
+            <a href="https://wa.me/2347062911891" class="btn">Buy on WhatsApp</a>
+        </div>
+
+        <div class="card">
+            <img src="https://images.unsplash.com/photo-1600185365483-26d7a4cc7519" alt="Sneaker">
+            <h3>Luxury Street Sneaker</h3>
+            <p>₦55,000</p>
+            <a href="https://wa.me/2347062911891" class="btn">Buy on WhatsApp</a>
+        </div>
+
+        <div class="card">
+            <img src="https://images.unsplash.com/photo-1528701800489-20be9c8b1b5d" alt="Sneaker">
+            <h3>Casual Classic Vans</h3>
+            <p>₦35,000</p>
+            <a href="https://wa.me/2347062911891" class="btn">Buy on WhatsApp</a>
+        </div>
+
+    </div>
+</section>
+
+<!-- ABOUT -->
+<section class="about" id="about">
+    <h2>About AySneakz</h2>
+
+    <p>
+        🔥🔥 AySneakz here! 🛍️ <br><br>
+        Need fresh kicks? 😎 We’ve got the dopest sneakers in town! 👟 
+        Affordable, stylish, and comfy – AySneakz got you covered!<br><br>
+
+        Patronize us and get the best deals 🤝. 
+        Tell a friend to tell a friend 🤑! Refer someone and get a discount on your next pair 😊.<br><br>
+
+        Hit us up on WhatsApp or DM to cop your favorite sneakers now!
+    </p>
+
+    <a href="https://www.tiktok.com/@aysneakz" class="btn">Visit TikTok</a>
+</section>
+
+<!-- FOOTER -->
+<footer>
+    <p>Contact: 07062911891 | 08081319793</p>
+    <p>© 2026 AySneakz. All rights reserved.</p>
+</footer>
+
+</body>
+</html>
