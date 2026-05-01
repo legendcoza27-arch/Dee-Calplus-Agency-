@@ -1,0 +1,5 @@
+git init
+git add .
+git commit -m "Aysneakz sneaker store"
+git remote add origin https://github.com/legendcoza27-arch/aysneakz.git
+git push -u origin main
